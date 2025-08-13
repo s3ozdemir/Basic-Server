@@ -16,8 +16,8 @@ def run_command_linux(cmd: str) -> str:
             shell=True,
             capture_output=True,
             text=True,
-            encoding="utf-8",   # UTF-8 olarak oku
-            errors="ignore"     # Sorunlu karakterleri atla
+            encoding="utf-8",   
+            errors="ignore"     
         )
         return (result.stdout or "") + (result.stderr or "")
     except Exception as e:
@@ -55,7 +55,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
         except Exception as e:
             print("Error sending response:", e)
 
-# ThreadingHTTPServer ile aynı anda birden fazla request işlenebilir ve server kapanmaz
 httpd = ThreadingHTTPServer((HOST, PORT), SimpleHandler)
 print(f"[HTTP] Sunucu çalışıyor: http://{HOST}:{PORT}")
 httpd.serve_forever()
+
